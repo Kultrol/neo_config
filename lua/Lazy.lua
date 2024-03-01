@@ -1,3 +1,4 @@
+
 -- Lazy Plugin Manager Bootstraper
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -18,3 +19,6 @@ require("lazy").setup("plugins")
 
 
 require('configs')
+
+-- Load snippets from ~/.config/nvim/LuaSnip/
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/luasnippets"})
