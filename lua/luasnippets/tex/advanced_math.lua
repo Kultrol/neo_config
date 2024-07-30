@@ -279,13 +279,7 @@ return
       t("\\setminus "),
     }
   ),
-  -- SUBSET, i.e. \subset
-  s({trig = "sbb", snippetType="autosnippet"},
-    {
-      t("\\subset "),
-    }
-  ),
-  -- APPROX, i.e. \approx
+ -- APPROX, i.e. \approx
   s({trig = "px", snippetType="autosnippet"},
     {
       t("\\approx "),
@@ -305,10 +299,24 @@ return
       t("\\colon "),
     }
   ),
-  -- IMPLIES, i.e. \implies
-  s({trig = ">>", snippetType="autosnippet"},
-    {
-      t("\\implies "),
-    }
-  ),
+  -- Greater than >
+  s({trig = "gth", snippetType="autosnippet"},
+  {
+	  t(">"),
+  }),
+  --Less than <
+  s({trig = "lth", snippetType="autosnippet"},
+  {
+	  t("<"),
+  }),
+--Greater than or equal to >=
+  s({trig = "gqth", snippetType="autosnippet"},
+  {
+	  t("\\geq"),
+  }),
+  --Less than or equalt to <=
+  s({trig = "lqth", snippetType="autosnippet"},
+  {
+	  t("\\leq"),
+  }),
 }
