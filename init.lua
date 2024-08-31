@@ -39,3 +39,23 @@ local timer = vim.loop.new_timer()
 timer:start(0, 60000 * 60, vim.schedule_wrap(function()
     autoChangeTheme()
 end))
+
+
+-- Set number width (adjust this to create more space)
+vim.o.numberwidth = 4
+
+-- Enable a fold column (useful for padding and also for code folding)
+vim.o.foldcolumn = "2"
+
+-- Enable line numbers (if not already enabled)
+vim.o.number = true
+vim.o.relativenumber = true
+
+
+vim.opt.wrap = true
+vim.opt.textwidth = 80
+vim.opt.linebreak = true
+vim.opt.wrapmargin = 2
+vim.opt.numberwidth = 5
+vim.opt.signcolumn = "yes:1"
+
