@@ -122,7 +122,7 @@ return
       { condition = line_begin }
     ),
     -- ALIGN
-    s({trig="all", snippetType="autosnippet"},
+    s({trig="agl", snippetType="autosnippet"},
       fmta(
         [[
         \begin{align*}

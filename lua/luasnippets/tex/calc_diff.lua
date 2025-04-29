@@ -20,17 +20,6 @@ end
 tex.in_text = function() return not tex.in_mathzone() end
 
 return{
-	  -- DERIVATIVE with denominator only
-  s({trig = "([^%a])dV", wordTrig = false, regTrig = true, snippetType="autosnippet"},
-    fmta(
-      "<>\\dvOne{<>}",
-      {
-        f( function(_, snip) return snip.captures[1] end ),
-        d(1, get_visual),
-      }
-    ),
-    {condition = tex.in_mathzone}
-  ),
   -- DERIVATIVE with numerator and denominator
   s({trig = "([^%a])dvv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
@@ -56,18 +45,7 @@ return{
     ),
     {condition = tex.in_mathzone}
   ),
-  -- PARTIAL DERIVATIVE with denominator only
-  s({trig = "([^%a])pV", wordTrig = false, regTrig = true, snippetType="autosnippet"},
-    fmta(
-      "<>\\pdvOne{<>}",
-      {
-        f( function(_, snip) return snip.captures[1] end ),
-        d(1, get_visual),
-      }
-    ),
-    {condition = tex.in_mathzone}
-  ),
-  -- PARTIAL DERIVATIVE with numerator and denominator
+ -- PARTIAL DERIVATIVE with numerator and denominator
   s({trig = "([^%a])pvv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
       "<>\\pdv{<>}{<>}",
@@ -207,4 +185,14 @@ return{
     },
     {condition = tex.in_mathzone}
   ),
+	  s({trig = "([^%a])vec", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+	    fmta(
+	      "<>\\vec{<>}",
+	      {
+		f( function(_, snip) return snip.captures[1] end ),
+		i(1),
+	      }
+	    ),
+	    {condition = tex.in_mathzone}
+	  ),
 }
